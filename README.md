@@ -195,6 +195,17 @@ I've tested it on a P2S. The X1 Carbon, X1, X1E, P1P, P1S, A1 mini, A1, H2D and
 H2S use the same interface and their model codes are recognised, but I haven't
 tried them. If you have one, let me know how it goes.
 
+## Contributing
+
+Issues and pull requests are welcome, especially reports from printers I
+haven't tried. Run `swift run bambu-status --discover` and then
+`swift run bambu-status <ip> <serial> <access-code>`, and open an issue with
+what it printed (leave out your access code).
+
+A few things I'd like to keep: it reads status only, it has no dependencies,
+and the parsing in `BambuCore` stays free of networking. `swift test` should
+pass before you open a PR; GitHub runs it too.
+
 ## Licence
 
 MIT. See [LICENSE](LICENSE).
