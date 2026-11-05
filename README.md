@@ -67,12 +67,29 @@ swift run bambu-status 192.168.1.143 01P00A000000000 12345678
 
 ## What you need from the printer
 
-- IP address and access code: Settings → Network (WLAN) on the printer's
-  screen. The access code is 8 characters.
-- Serial number: Settings → Device, or let discovery find it.
+Three things, all on the printer's own screen. The menu names move around a
+bit between models and firmware versions, but they're always under Settings.
 
-Your Mac or iPhone has to be on the same network as the printer. LAN-only mode
-isn't needed for reading status.
+- **IP address.** Settings → Network (on some models the page is called WLAN,
+  or LAN Only). It looks like `192.168.1.143`.
+- **Access code.** On the same page, under the IP. It's 8 characters, letters
+  and numbers, like `f3a9c2e1`. It's the password for your printer on your
+  network, so don't post it anywhere. The refresh arrow next to it makes a new
+  one, and anything using the old one gets locked out until you update it.
+- **Serial number.** Settings → Device, or in Bambu Studio and Bambu Handy
+  under the printer's details. Easiest is to let discovery find it:
+  `swift run bambu-status --discover` prints it, and the example app fills it
+  in for you.
+
+The same page has a **LAN Only** switch. You don't need to turn it on: status
+works with the printer still connected to Bambu Cloud. Turning it on cuts the
+printer off from the cloud and the Handy app. Developer Mode, if your firmware
+has it, isn't needed either; it only matters for sending commands, which this
+package doesn't do.
+
+Your Mac or iPhone has to be on the same network as the printer. If discovery
+finds nothing, check the IP: a Mac on `192.168.27.x` won't reach a printer on
+`192.168.1.x`, even in the same building.
 
 ## Install
 
