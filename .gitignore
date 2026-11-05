@@ -1,0 +1,6 @@
+.DS_Store
+.build/
+.swiftpm/
+*.xcuserstate
+# planning notes, not for the public repo
+NOTES.md
