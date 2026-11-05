@@ -1,4 +1,4 @@
-<img src="docs/icon.svg" width="96" alt="">
+![bambu-swift: printer status over your network](docs/banner.gif)
 
 # bambu-swift
 
